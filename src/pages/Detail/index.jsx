@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import { DeatilCardImage, QuestionList } from './../../components/detail-section';
 import { AppContext } from "./../../context";
+import { sortQuestions } from './../../utils';
 
 import SORT_IMG from './../../assets/sort.svg';
 import './Detail.sass';
@@ -20,20 +21,12 @@ export default function Detail() {
       setSelectedDetail(tmpSelectedDetail);
       setQuestions(tmpSelectedDetail.questions.map(i => {
         return { ...i, date: new Date(i.date) }
-      }).sort((a, b) => {
-        if (a.date > b.date) return -1;
-        if (b.date > a.date) return 1;
-        return 0;
-      }))
+      }).sort(sortQuestions(false)))
     }
   }, []);
 
   const handleSortData = () => {
-    setQuestions([...questions].sort((a, b) => {
-      if (a.date > b.date) return !questionsSortIsDesc ? -1 : 1;
-      if (b.date > a.date) return !questionsSortIsDesc ? 1 : -1;
-      return 0;
-    }))
+    setQuestions([...questions].sort(sortQuestions(questionsSortIsDesc)))
     setQuestionsSortIsDesc(!questionsSortIsDesc)
   }
 
@@ -51,9 +44,7 @@ export default function Detail() {
         <div className="col-6">
           <div className="detail-right-section">
             <h1>{selectedDetail.title}</h1>
-            <div>
-              <a onClick={handleSortData}>sort by latest &nbsp;<img height="12" src={SORT_IMG} /></a>
-            </div>
+            <button onClick={handleSortData}>sort by latest &nbsp;<img height="12" src={SORT_IMG} /></button>
             <QuestionList items={questions} />
           </div>
         </div>

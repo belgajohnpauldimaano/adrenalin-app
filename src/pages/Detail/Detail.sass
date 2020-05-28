@@ -1,36 +1,48 @@
 .detail-container
-  margin-bottom: 70px
+  margin-bottom: 100px
   .detail-right-section
-    padding: 40px 10px 10px 100px
+    padding: 0 10px 10px 130px
 
     h1
       font-size: 68px
-      font-weight: bold 
+      // font-weight: bold // style is roboto bold but display seems like roboto regular in the display, 
+      font-weight: 500
+      margin-bottom: 25px
+      font-family: 'Roboto', sans-serif;
 
-    a
+    button
+      border: none
+      background: none
       text-transform: uppercase
       font-weight: 700
       color: #425df7
       font-size: 13px
       cursor: pointer
+      margin-bottom: 26px
   
-  @media ( max-width: 1200px)
+  @media ( max-width: 1400px)
+    padding-top: 0
     .detail-right-section
-      padding: 10px 30px 10px 30px
+      padding: 0 30px 10px 30px
       h1
         font-size: 68px
   @media ( max-width: 900px)
+    padding-top: 10px
+    margin-bottom: 25px
     .detail-right-section
       padding: 10px 30px 10px 30px
-      // h1
-      //   font-size: 40px
+      h1
+        font-size: 58px
   @media ( max-width: 700px)
+    padding-top: 10px
+    margin-bottom: 25px
     .detail-right-section
       padding: 10px 30px 10px 30px
-      // h1
-      //   font-size: 40px
+      h1
+        font-size: 48px
   @media ( max-width: 400px)
+    padding-top: 10px
+    margin-bottom: 25px
     .detail-right-section
-      padding: 10px
-      // h1
-      //   font-size: 38px
+      h1
+        font-size: 38px

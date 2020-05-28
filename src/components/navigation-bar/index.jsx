@@ -15,12 +15,6 @@ export default function NavigationBar() {
     <div className="nav-bar">
       <div className="title-container">
         <Logo />
-        {width < 600 && 
-        <span className={`${menuBarIsOpen ? 'clicked' : ''}`} onClick={toggleMenu}>
-          <div className="bar1"></div>
-          <div className="bar2"></div>
-          <div className="bar3"></div>
-        </span>}
       </div>
       <Menu openMenu={menuBarIsOpen} windowWidth={width} />
     </div>

@@ -3,21 +3,36 @@
   flex-wrap: wrap
   justify-content: space-between
   height: 75px
-  padding: 50px 0
-  margin-bottom: 30px
+  padding: 40px 0 63px 0
+
   .title-container
     display: flex
     justify-content: space-between
-    
+
   .menu-container
+    #chk-menu-toggle
+      display: none    
+    .lable-menu-toggle
+      width: 27px
+      position: absolute
+      right: 20px
+      top: 21px
+      display: none    
     display: flex
     transition: all 2s
-    a
-      font-size: 14px
-      padding: 0 10px 10px 10px
-      color: #000000
-      font-family: Helvetica, sans-serif 
-      line-height: 14px
+    ul
+      width: 100%
+      height: inherit
+      margin: 0
+      padding: 0
+      display: flex; 
+      a
+        font-size: 14px
+        padding: 0 10px 10px 10px
+        color: #000000
+        font-family: Helvetica, sans-serif 
+        line-height: 14px
+        display: inline-block
     
   .bar1, .bar2, .bar3 
     width: 25px
@@ -26,14 +41,14 @@
     margin: 6px 0
     transition: 0.4s
   
-  .clicked .bar1 
-    transform: rotate(-48deg) translate(-2px, 6px)
+  // .clicked .bar1 
+  //   transform: rotate(-48deg) translate(-2px, 6px)
   
-  .clicked .bar2
-    opacity: 0
+  // .clicked .bar2
+  //   opacity: 0
 
-  .clicked .bar3 
-    transform: rotate(45deg) translate(-4px, -8px)
+  // .clicked .bar3 
+  //   transform: rotate(45deg) translate(-4px, -8px)
 
 
   @media (max-width: 600px)
@@ -41,8 +56,16 @@
     flex-wrap: nowrap
     height: 100%
     padding: 20px 0 0 0
-
     .menu-container
       flex-direction: column
+      text-align: center
+      .lable-menu-toggle
+        display: block
+      ul
+        display: none
+        a
+          padding: 13px
+      #chk-menu-toggle:checked ~ ul
+        display: block
 
     
